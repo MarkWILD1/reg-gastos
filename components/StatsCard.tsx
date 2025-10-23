@@ -12,9 +12,9 @@ interface StatsCardProps {
 
 export default function StatsCard({ title, amount, period, dateRange }: StatsCardProps) {
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-ES', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'EUR'
+      currency: 'USD'
     }).format(amount)
   }
 

@@ -32,9 +32,9 @@ const categoryColors: { [key: string]: string } = {
 
 export default function ExpenseList({ expenses, onEdit, onDelete }: ExpenseListProps) {
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-ES', {
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'EUR'
+      currency: 'USD'
     }).format(amount)
   }
 

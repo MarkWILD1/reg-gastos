@@ -24,4 +24,40 @@
   .card {
     @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
   }
+  
+  .chart-container {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+  }
+  
+  .chart-title {
+    @apply text-lg font-semibold text-gray-900 mb-2;
+  }
+  
+  .chart-subtitle {
+    @apply text-sm text-gray-500 mb-4;
+  }
+  
+  .charts-toggle {
+    @apply w-full flex items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  .charts-toggle-content {
+    @apply flex items-center gap-3;
+  }
+  
+  .charts-toggle-text {
+    @apply text-left;
+  }
+  
+  .charts-toggle-title {
+    @apply font-semibold text-gray-900;
+  }
+  
+  .charts-toggle-subtitle {
+    @apply text-sm text-gray-500;
+  }
+  
+  .charts-toggle-icon {
+    @apply transform transition-transform;
+  }
 }
