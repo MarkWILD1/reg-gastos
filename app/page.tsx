@@ -41,9 +41,12 @@ export default function Home() {
       setLoading(true)
       setError(null)
       
+      // Format date as YYYY-MM-DD to avoid timezone issues
+      const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`
+      
       const params = new URLSearchParams({
         period: currentPeriod,
-        date: currentDate.toISOString()
+        date: dateString
       })
       
       const response = await fetch(`/api/expenses?${params}`)

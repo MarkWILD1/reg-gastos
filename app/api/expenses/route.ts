@@ -17,8 +17,9 @@ export async function GET(request: NextRequest) {
     
     switch (period) {
       case 'daily':
-        startDate = new Date(targetDate.setHours(0, 0, 0, 0))
-        endDate = new Date(targetDate.setHours(23, 59, 59, 999))
+        // Create dates in local timezone to avoid timezone issues
+        startDate = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate(), 0, 0, 0, 0)
+        endDate = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate(), 23, 59, 59, 999)
         break
       case 'weekly':
         const dayOfWeek = targetDate.getDay()
