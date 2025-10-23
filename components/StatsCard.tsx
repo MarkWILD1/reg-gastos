@@ -19,8 +19,8 @@ export default function StatsCard({ title, amount, period, dateRange }: StatsCar
   }
 
   const formatDateRange = () => {
-    const start = new Date(dateRange.startDate)
-    const end = new Date(dateRange.endDate)
+    const start = new Date(dateRange.startDate )
+    const end = new Date(dateRange.endDate )
     
     if (period === 'daily') {
       return start.toLocaleDateString('es-ES', { 
@@ -56,9 +56,9 @@ export default function StatsCard({ title, amount, period, dateRange }: StatsCar
         <div className="text-3xl font-bold text-primary-600 mb-2">
           {formatCurrency(amount)}
         </div>
-        <p className="text-sm text-gray-500">
+        {/* <p className="text-sm text-gray-500">
           {formatDateRange()}
-        </p>
+        </p> */}
       </div>
     </div>
   )
