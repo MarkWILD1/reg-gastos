@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { format } from 'date-fns'
 import ExpenseForm from '@/components/ExpenseForm'
 import ExpenseList from '@/components/ExpenseList'
@@ -36,7 +36,7 @@ export default function Home() {
   const [currentPeriod, setCurrentPeriod] = useState('daily')
   const [currentDate, setCurrentDate] = useState(new Date())
 
-  const fetchExpenses = async () => {
+  const fetchExpenses = useCallback(async () => {
     try {
       setLoading(true)
       setError(null)
@@ -59,11 +59,11 @@ export default function Home() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [currentPeriod, currentDate])
 
   useEffect(() => {
     fetchExpenses()
-  }, [currentPeriod, currentDate])
+  }, [currentPeriod, currentDate, fetchExpenses])
 
   const handleAddExpense = async (expenseData: {
     description: string
