@@ -11,6 +11,6 @@
     }
   },
   "env": {
-    "MONGODB_URI": "@mongodb_uri"
+    "MONGODB_URI": "mongodb+srv://licmarkceip:finanzasx1000@clusterfinanzas.b7u1d.mongodb.net/reg-gastos"
   }
 }
